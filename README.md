@@ -23,7 +23,13 @@
 
  ### <strong>🔥SKILL</strong>
 
- HTML, CSS, SCSS 
+ HTML, CSS, SCSS, Git
+  
+<br/>
+
+ ### <strong>📌최종 배포 사이트</strong>
+
+https://highkality.netlify.app/[https://highkality.netlify.app/]
   
 <br/>
 

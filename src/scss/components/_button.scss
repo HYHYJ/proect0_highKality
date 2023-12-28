@@ -1,1 +1,162 @@
 // button.scss
+@use "../utils" as *;
+
+.headerBanner__button {
+
+  background: url("../../images/Icon/Cancel.png") no-repeat;
+
+  @include imgBtn($w: 30, $h: 30);
+
+  border: 0;
+
+
+}
+
+//검색 버튼
+.search__button {
+  cursor: pointer;
+}
+
+//문의 버튼
+.inquiryButton {
+  cursor: pointer;
+  background: white;
+  border: 1px solid $gray-200;
+  width: rem(140px);
+  height: rem(40px);
+
+}
+
+
+
+.sideBar__button {
+
+  @include flexbox($justify: space-between, $items: center);
+
+  width: rem(220px);
+  height: rem(52px);
+
+  font-size: rem(16px);
+  font-weight: 600;
+  line-height: 150%;
+
+  background: $white;
+  color: $content;
+
+  padding: 0;
+  border: 0;
+  border-bottom: 1px solid $gray-100;
+
+}
+
+//초기화 버튼
+
+.reset__button {
+  cursor: pointer;
+
+  line-height: 160%;
+  font-size: rem(10px);
+  font-weight: 600;
+  color: $gray-300;
+  background: $white;
+  border: 0;
+}
+
+
+.sideBar__button__clicked {
+  @include flexbox($justify: space-between, $items: center);
+
+  width: rem(220px);
+  height: rem(52px);
+
+  font-size: rem(16px);
+  font-weight: 600;
+  line-height: 150%;
+
+  background: $white;
+  color: $content;
+
+  padding: 0;
+  border: 0;
+}
+
+//더보기 버튼
+.more__button {
+
+  background: $white;
+  color: $gray-300;
+
+  cursor: pointer;
+
+  width: 100%;
+  font-size: rem(12px);
+  font-weight: 600;
+  line-height: 150%;
+
+  border: 0;
+  padding: 0;
+
+  &::after {
+    content: "";
+    @include imgBtn($w: 18, $h: 14,$display:inline-block);
+  
+    background: url("../../images/Icon/Arrow_right.svg") no-repeat;
+    
+  }
+
+}
+
+//movePage 버튼 
+
+.doubleRight {
+  position: absolute;
+
+  @include imgBtn($w: 10, $h: 8);
+
+  background: url("../../images/Icon/doubleRight.png") no-repeat;
+  
+
+  @include posCenter;
+
+}
+
+.right {
+
+  position: absolute;
+  @include imgBtn($w: 5, $h: 8);
+  background: url("../../images/Icon/right.png") no-repeat;
+  
+
+  @include posCenter;
+
+}
+
+.pageNum {
+  position: absolute;
+  font-size: rem(12px);
+  font-family: Inter;
+  color: $content;
+
+  @include posCenter;
+
+}
+
+.doubleLeft {
+  position: absolute;
+  
+  background: url("../../images/Icon/doubleLeft.png") no-repeat;
+  
+  @include imgBtn($w: 10, $h: 8);
+
+  @include posCenter;
+
+}
+
+.left {
+  position: absolute;
+  
+  @include imgBtn($w: 5, $h: 8);
+  background: url("../../images/Icon/left.png") no-repeat;
+  
+  @include posCenter;
+}

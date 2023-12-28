@@ -5,6 +5,16 @@ body {
     sans-serif;
   font: inherit;
   background-color: #fff;
+
+  //화면 넘칠 시에 스크롤
+  // overflow: scroll;
+}
+
+
+button {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
 }
 
 /* 유연한 미디어 */

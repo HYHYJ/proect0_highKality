@@ -1,1 +1,153 @@
-// mixin.scss
+@use "./unit" as *;
+@use "sass:math";
+
+// 포지션 믹스인
+
+@mixin pos{
+  position: absolute;
+}
+
+@mixin posLeftTop($l:0, $t:0){
+  @include pos;
+  top: $t;
+  left: $l;
+
+}
+@mixin posRightTop($r:0, $t:0){
+  @include pos;
+  top: $t;
+  right: $r;
+}
+
+@mixin posCenterX{
+  @include pos;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+@mixin posBottomY{
+  @include pos;
+  top: 100%;
+  transform: translateY(-100%);
+}
+
+@mixin posCenterY{
+  @include pos;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+@mixin posCenter{
+  @include pos;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%,-50%);
+}
+
+// 패딩 믹스인
+@mixin paddingXY($X,$Y){
+  @include paddingX($X);
+  @include paddingY($Y);
+  
+}
+
+@mixin padding($spacing){
+  @include paddingX($spacing);
+  @include paddingY($spacing);
+  
+}
+@mixin paddingX($spacing){
+  padding-left: rem($spacing);
+  padding-right: rem($spacing);
+}
+@mixin paddingY($spacing){
+  padding-top: rem($spacing);
+  padding-bottom: rem($spacing);
+}
+
+@mixin paddingPct($spacing){
+  
+  $pct: math.div($spacing,100);
+  
+  padding-left: math.percentage($pct);
+  padding-right: math.percentage($pct);
+}
+
+// 마진 믹스인
+
+@mixin margin($spacing){
+  @include marginX($spacing);
+  @include marginY($spacing);
+  
+}
+@mixin marginX($spacing){
+  margin-left: rem($spacing);
+  margin-right: rem($spacing);
+}
+@mixin marginY($spacing){
+  margin-top: rem($spacing);
+  margin-bottom: rem($spacing);
+}
+
+@mixin autoMargin{
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@mixin containerMax($max-width:1024px){
+  max-width: rem($max-width);
+  @include autoMargin;
+}
+
+// 그리드 믹스인
+@mixin gridbox($column-count: 12, $column-width:1fr,$row-gap: 0,$column-gap: 16px) {
+  display: grid;
+  grid-template-columns: repeat($column-count, $column-width);
+  grid-template-rows: auto;
+  grid-row-gap: rem($row-gap);
+  grid-column-gap: rem($column-gap);
+  
+}
+
+//ratio 믹스인
+
+@mixin ratio($w:16, $h:9){
+  aspect-ratio:  math.div($w,$h);
+  // $w / $h;
+}
+
+// 반응형 콘텐츠
+@mixin respons($width: max-width,$height:auto) {
+  #{$width}: 100%;
+  height: $height;
+}
+
+@mixin textOver{
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+//오브젝트
+@mixin fit($posX:50%,$posY:50%,$fit:cover){
+  object-fit: $fit;
+  object-position: $posX,$posY;
+
+}
+
+//버튼 관련 mixin
+
+@mixin imgBtn($w,$h,$display:block){
+  width: rem($w);
+  height: rem($h);
+  display: $display;
+}
+
+// 가로세로 길이 지정
+@mixin wX($width1) {
+  width: $width1;
+}
+
+@mixin hRegi {
+  height: 40px;
+}

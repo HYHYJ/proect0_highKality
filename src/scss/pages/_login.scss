@@ -1,0 +1,118 @@
+
+@use "../utils" as *;
+@use "../components" as *;
+// @import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.7/dist/web/static/pretendard.css");
+
+.main__box{
+    font-family: pretendard;
+}
+
+.hidden__label {
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+
+.login{
+    @include flexbox($direction:column,$items:center);
+    @include paddingY(80px);
+    // display: flex;
+    // width: 1920px;
+    // padding: rem(80px) rem(0px);
+    // flex-direction: column;
+    // align-items: center;
+    gap: 44px;
+}
+
+.login__main {
+    color: black;
+    font-size: rem(21.328px) boild;
+    // font-family: Pretendard;
+    font-weight: 600;
+    line-height: 150%;
+    margin: 0 auto;
+}
+
+.form__main {
+    @include flexbox($direction:column,$items:center);
+    // display: flex;
+    width: rem(340px);
+    // flex-direction: column;
+    // align-items: flex-start;
+}
+
+.input__main {
+    @include flexbox($direction:column,$items:flex-end);
+    @include paddingXY(20px,12px);
+
+
+    // display: flex;
+    // flex-direction: column;
+    // align-items: flex-end;
+    margin-bottom: rem(12px);
+    align-self: stretch;
+    height: rem(50px);
+    // padding: rem(12px) rem(20px);
+    border-radius: rem(4px);
+    border: 1px solid $gray-300;
+ 
+}
+
+// .input-field {
+//     display: flex;
+//     align-items: center;
+//     gap: 31px;
+//     align-self: stretch;
+// }
+
+.placeholder {
+    color: $gray-400;
+    font-size: rem(16px);
+    // font-family: Pretendard;
+    line-height: 160%;
+}
+
+.find {
+    color: $black;
+    font-size: rem(12.003px);
+    // font-family: Pretendard;
+    line-height: 160%;
+    margin-left: auto;
+    margin-bottom: rem(28px);
+    text-decoration: none;
+
+}
+
+.login__button {
+    @include flexbox($direction:column,$items:center,$justify:center);
+    // display: flex;
+    height: rem(54px);
+    // justify-content: center;
+    // align-items: center;
+    align-self: stretch;
+    border-radius: rem(4px);
+    background: $primary;
+    color: $white;
+    font-size: rem(16px);
+    // font-family: Pretendard;
+    font-weight: 600;
+    line-height: 150%;
+    margin-bottom: rem(12px);
+}
+
+.member {
+    @include flexbox($direction:column,$items:center,$justify:center);
+    // display: flex;
+    height: rem(54px);
+    // justify-content: center;
+    // align-items: center;
+    align-self: stretch;
+    border-radius: rem(4px);
+    border: 1px solid $primary;
+    color: $primary;
+    font-size: rem(16px);
+    // font-family: Pretendard;
+    font-weight: 600;
+    line-height: 150%;
+    text-decoration: none;
+}

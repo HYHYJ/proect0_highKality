@@ -1,0 +1,394 @@
+@use "../utils" as *;
+@use "../components" as *;
+
+//제품 설명 박스
+.productDetail{
+  position: relative;
+  width: rem(1050px);
+  font-family: Pretendard;
+  font-size: rem(16px); 
+  @include autoMargin;
+  padding: rem(60px) 0;
+  box-sizing: border-box;
+
+  //제품 설명 제목 묶음
+  &__titleBox{
+    @include flexbox($direction: column);
+    row-gap: rem(16px);
+  }
+  //제목 맨위 샛별배송 글자 위치/스타일링
+  &__starDelivery{
+    order: -1;
+    color: $gray-500;
+    font-size: rem(21px);
+    font-weight: 800;
+  }
+  //설명 제목
+  &__title {
+    font-size: rem(27px);
+    font-weight: 700;
+  }
+  //설명 서브제목
+  &__sub{
+    color: $gray-400;
+    line-height: 160%;
+  }
+  //설명 박스를 margin left줘서 이미지가 위치할 수있도록 한다.
+  &__productcart, &__list, &__titleBox, &__productcart {
+    margin-left: 480px;
+  }
+  //제품 이미지
+  &__image{
+    @include pos;
+    top: 60px;
+  }
+  &__fontSizeXl{
+    color: $gray-800;
+    font-size: rem(29px);
+    font-weight: 600;
+    line-height: 150%;
+  }
+  &__fontSizeS {
+    color: $gray-800;
+    font-weight: 700;
+    line-height: 140%;  
+  }
+  &__PurpleSpan {
+    color: $primary;
+    font-family: Pretendard;
+    font-weight: 600;
+    line-height: 150%;
+    margin-bottom: 20px;
+  }
+  //상품상세 설명표 리스트
+  &__item{
+    display: flex;
+    @include paddingY(16px);
+    border-top: 1px solid $gray-100; 
+    font-size: rem(12px);
+  }
+  &__item:last-child{
+    border-bottom: 1px solid $gray-100;
+  }
+  //상품상세 설명표 리스트 dt
+  &__item dt {
+    width: rem(128px);
+
+  }
+  &__item &__fontBold {
+    color: $gray-700;
+    width: rem(128px);
+    line-height: 150%;
+    margin-bottom: rem(10px);
+  }
+ //상품상세 설명표 리스트 dd
+  &__item dd {
+    display: span;
+    color: $gray-500;
+  }
+
+  &__allegyDd {
+    display: block;
+    width: rem(432px);
+  }
+  //상품 선택 할 수 있는 박스
+  &__select {
+    position: relative;
+    width: rem(432px);
+    height: rem(83px);
+    border: rem(1px) solid $gray-100;
+    color: $gray-600;
+    font-weight: 600;
+    @include padding(12px);
+  }
+  //상품 총 가격
+  &__selectPrice{
+    @include pos;
+    font-size: rem(15px);
+    font-weight: 700;
+    bottom: rem(12px);
+    right: rem(12px);
+  }
+  //상품 수량 선택 박스
+  &__selectBox {
+    height: rem(30px);
+    width: rem(83px);
+    border: rem(1px) solid $gray-200;
+    margin-top: rem(12px);
+    text-align: center;
+  }
+  
+  &__plus{
+    cursor: pointer;
+    background: url('/images/Icon/Plus.png');
+    width: 28px;
+    height: 30px;
+    border: none;
+    background-position: 50% 17%;
+    float: right;
+  }
+  &__minus{
+    cursor: pointer;
+    background: url('/images/Icon/Minus.png');
+    width: 28px;
+    height: 30px;
+    border: none;
+    background-position: 50% 87%;
+    float: left;
+    
+  }
+  &__selectBoxOne {
+    display: inline-block;
+    padding: auto 0;
+    transform: translateY(8px);
+    font-weight: 800;
+
+  }
+ //총 상품금액
+  &__allPrice {
+    @include flexbox($justify: flex-end, $items: center);
+    column-gap: rem(17px);
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 150%;
+    margin-top: rem(28px);
+
+  }
+  //포인트 적립 안내글
+  &__point{
+    margin-top: rem(9px);
+    text-align: end;
+    font-size: 16px;
+    font-weight: 600;
+    margin-bottom: rem(28px);
+  }
+  &__pointIcon{
+    border-radius: 12px;
+    background: $orange;
+    width: rem(34px);
+    height: rem(24px);
+    text-align: center;
+    color: $white;
+    font-size: 10px;
+    line-height: 160%;
+    padding: 4px 8px;
+    margin-right: 3px;
+
+  }
+  // 알림, 좋아요, 장바구니 버튼
+  &__allButton {
+    @include flexbox($justify: space-between)
+  }
+  &__button {
+    cursor: pointer;
+    width: 56px;
+    height: 56px;
+    padding: 4px;
+    border: 1px solid $gray-100;
+    // background: $white;
+  }
+  &__heart{
+    background: url('/images/Icon/Squre.png');
+    background-position: 50% 89% ;
+  }
+  &__alarm{
+    background: url('/images/Icon/bell-2.png') no-repeat;
+    background-position: 55% 50%;
+  }
+  &__cartButton {
+    cursor: pointer;
+    border-radius: 4px;
+    background: $primary;
+    width: rem(430px);
+    height: rem(54px);
+    color: $white;
+    font-weight: 600;
+    margin-bottom: rem(48px);
+  }
+}
+
+//상세페이지 섹션
+.productDetail__list .productDetail__item{
+  display: flex;
+}
+
+// 이미지 상세페이지 부분
+.description{
+  position: relative;
+  width: rem(1050px);
+  font-family: Pretendard;
+  font-size: rem(16px);
+  @include flexbox($direction: column-reverse);
+  @include autoMargin;
+  //상세페이지 첫번째 이미지
+  &__image img{
+    width: 100%;
+    margin-top: rem(40px);
+  }
+  //상세페이지 제목 박스
+  &__titleBox {
+    color: $black;
+    @include flexbox($direction: column);
+    @include padding(76px);
+    text-align: center;
+    border-bottom: 1px solid $gray-100;
+  }
+  //상세페이지 서브 제목
+  &__subTitle {
+    
+    font-size: rem(28.43px);
+    font-weight: 600;
+    line-height: 150%;
+  }
+  //상세페이지 제목
+  &__title {
+    font-size: rem(50.517px);
+    font-weight: 700;
+    line-height: 140%;
+  }
+  //상세페이지 제품 설명글
+  &__p {
+    margin-top: rem(40px);
+    padding-bottom: rem(200px);
+    border-bottom: 1px solid $gray-100;
+  }
+  //상세페이지 컬리가 제품설명하는 글
+  //제목
+  &__checkPointTitle{
+    display: block;
+    @include autoMargin;
+    width: rem(520px);
+    font-size: rem(50.517px);
+    font-weight: 700;
+    line-height: 140%;
+    background-color: $white;
+    transform: translateY(-40px);
+    margin-bottom: rem(70px);
+  }
+  //상세페이지 컬리가 제품설명하는 이미지
+  &__descriptionImage{
+    margin-bottom: rem(96px);
+
+  }
+  //제품설명, 상세정보, 후기, 문의 버튼바 
+  &__button{
+    cursor: pointer;
+    height: rem(54px);
+    width: 25%;
+    float: left;
+    border-radius: 0;
+    border: 1px solid $gray-200;
+    background: #F9F9F9;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 150%;
+
+  }
+  &__button span{
+    padding-left: rem(5px);
+    font-size: rem(12.003px);
+    line-height: 160%;
+  }
+  &__buttonPurple{
+    background: $white;
+    color: $primary;
+    border: 1px solid#e0e0e0;
+  }
+}
+//Why karly 부분
+.whyKarly{
+  @include marginY(84px);
+  @include paddingX(12px);
+
+  &__title{
+    display: block;
+    text-align: center;
+    font-size: 28.43px;
+    font-weight: 700;
+    line-height: 140%;
+    margin-bottom: rem(35px);
+  }
+  &__sub{
+    @include flexbox($justify: center,
+    $wrap: wrap);
+    margin-bottom: rem(136px);
+  }
+  &__item{
+    text-align: center;
+    box-sizing: border-box;
+    width: rem(315px);
+    padding-top: rem(56px);
+  }
+  &__roundIcon{
+    width: 40px;
+    height: 40px;
+    @include autoMargin;
+    margin-bottom: rem(16px);
+  }
+  &__check {
+    background: url('/images/Icon/check-list-purple.svg');
+  }
+  &__web {
+    background: url('/images/Icon/web-purple.svg');
+  } &__delivery {
+    background: url('/images/Icon/delivery-purple.svg');
+  } &__price {
+    background: url('/images/Icon/price-plus-purple.svg');
+  } &__recycle {
+    background: url('/images/Icon/recycle-purple.svg');
+  }
+
+  &__subTitle{
+    color: $primary;
+    font-size: rem(21.328px);
+    font-weight: 600;
+    line-height: 150%;
+    
+  }
+  &__sub p{
+    padding-top: rem(24px);
+    @include autoMargin;
+    line-height: 160%;
+    width: 77%;
+  }
+}
+//상품 후기 부분
+.productReview{
+  position: relative;
+  padding-bottom: rem(136px);
+
+  &__title{
+    font-size: rem(28.43px);
+    font-weight: 700;
+    line-height: 140%;
+    margin-bottom: rem(30px);
+  }
+  &__sub{
+    color: $gray-800;
+    font-weight: 600;
+    line-height: 150%;
+  }
+  //
+  &__descriptList{
+    
+    color: $gray-500;
+    font-size: rem(12px);
+    font-weight: 600;
+    line-height: 150%;
+    margin-left: 1.5%;
+    list-style-type: disc;
+  }
+  
+  // 후기 작성하기 버튼
+  &__button{
+    cursor: pointer;
+    @include posRightTop($r:0, $t:0);
+    color: $white;
+    border-radius: 4px;
+    background: $primary;
+    width: 155px;
+    height: 44px;
+    border: 0;
+  }
+}
+

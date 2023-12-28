@@ -1,0 +1,34 @@
+@use "../utils/" as *;
+
+.logoKarly{
+  @include imgBtn($w:80,$h:45);
+  
+  background: url("../../images/logo2.svg") no-repeat;
+}
+
+.logoIsms{
+  background: url("../../images/logo_isms.png") no-repeat;
+  @include imgBtn($w:35,$h:35);
+}
+
+.logoPrivacy{
+  
+  background: url("../../images/logo_privacy.png") no-repeat;
+ 
+  @include imgBtn($w:35,$h:35);
+}
+
+.logoWoori{
+  
+  background: url("../../images/logo_wooriBank.png") no-repeat;
+
+  @include imgBtn($w:35,$h:35);
+  
+}
+
+.logoToss{
+  
+  background: url("../../images/logo_tosspayments.png") no-repeat;
+  
+  @include imgBtn($w:105,$h:35);
+}

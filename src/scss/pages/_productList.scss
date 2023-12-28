@@ -1,0 +1,270 @@
+@use "../utils" as *;
+@use "../components" as *;
+
+.mainContainer {
+
+  @include flexbox($direction: column, $items: center);
+
+  font-family: Pretendard;
+
+  padding: rem(48px) 0 rem(80px) 0;
+  gap: rem(48px);
+}
+
+.productList__title {
+  font-size: rem(21px);
+  font-weight: 600;
+  line-height: 150%;
+}
+
+//제목 외 전체 컨테이너
+
+.productContainer {
+  width: 100%;
+  @include paddingPct(20);
+  @include flexbox($items: flex-start);
+}
+
+//사이드바 영역
+
+.sideBar {
+  @include flexbox($direction: column);
+  flex: 1 0 0;
+}
+
+
+.brand {
+  @include flexbox($direction: column);
+
+  &__list {
+    @include flexbox($direction: column, $items: flex-start);
+
+    width: rem(220px);
+    padding: rem(12px) 0;
+
+    gap: rem(8px);
+
+    &:hover {
+      background: $gray-100;
+    }
+  }
+
+  &__link {
+    display: block;
+
+    width: 100%;
+    height: 100%;
+    @include flexbox($items: center);
+
+    &::before {
+      content: "";
+      background: url("../../images/Icon/Check.svg");
+      width: rem(24px);
+      height: rem(24px);
+      margin-right: rem(8px);
+    }
+
+  }
+}
+
+.grayNum {
+  font-size: rem(12px);
+  color: $gray-300;
+  margin-left: rem(4px);
+}
+
+.grayNum__small {
+ 
+  font-size: rem(12px);
+  margin-left: rem(8px);
+  color: $gray-300;
+  
+}
+
+.btn__list {
+  @include flexbox($justify: center, $items: center);
+  // padding: 12px 0px 12px 0px;
+
+  gap: rem(8px);
+
+  width: rem(220px);
+  height: rem(42px);
+  padding: rem(12px) 0px rem(14px) 0px;
+
+  border-bottom: 1px solid $gray-100;
+}
+
+
+
+// 프로덕트 메뉴바
+.menuContainer {
+  width: 100%;
+  padding: 0px 0px rem(20px) 0px;
+  @include flexbox($justify: space-between, $items: center);
+}
+
+.bold__main {
+  font-weight: bold;
+  color: $content;
+}
+
+.recommend {
+  @include flexbox($items: center);
+
+  &::after {
+    content: "";
+    display: inline-block;
+    background: url("../../images/Icon/question.svg");
+    width: rem(14px);
+    height: rem(20px);
+    margin-left: rem(5px);
+  }
+}
+
+.menu__wrap {
+  @include flexbox($items: center);
+  color: $gray-300;
+  font-weight: 500;
+  gap: rem(4px);
+}
+
+
+//상품
+.product {
+  @include flexbox($direction: column, $items: flex-start);
+
+  &__line {
+    @include flexbox($direction: column);
+    gap: rem(24px);
+  }
+
+  &__list {
+    position: relative;
+  }
+
+  &__wrap {
+    @include flexbox;
+    gap: rem(16px);
+  }
+
+  &__link {
+    @include flexbox($direction: column);
+    gap: rem(16px);
+  }
+
+  &__info {
+    @include flexbox($direction: column);
+    gap: rem(8px);
+  }
+
+  &__price {
+    font-size: rem(21px);
+    font-weight: 600;
+    line-height: 150%;
+  }
+
+  &__badge {
+    @include flexbox;
+    gap: rem(6px);
+  }
+
+  &__summary {
+    font-size: rem(12px);
+    color: $gray-400;
+  }
+
+  &__img {
+
+    width: rem(249px);
+    height: rem(320px);
+
+  }
+}
+
+
+//상품 리스트
+.imgContainer {
+  order: -1;
+}
+
+.tag {
+  color: $gray-400;
+  font-size: rem(12px);
+  font-weight: 600;
+  line-height: 150%;
+}
+
+
+//할인 상품 내용
+
+.discount {
+  @include flexbox;
+  gap: rem(8px);
+}
+
+.discountRate {
+  font-size: rem(21px);
+
+  font-weight: 600;
+  line-height: 150%;
+  color: $orange;
+}
+
+.discountPrice {
+  font-size: rem(21px);
+  font-weight: 600;
+  line-height: 150%;
+}
+
+.nonDiscount {
+  font-size: rem(12px);
+  color: $gray-400;
+  text-decoration: line-through;
+}
+
+
+.karlyBadge {
+  padding: rem(4px);
+  background: $gray-100;
+  color: $primary;
+  font-size: rem(14px);
+  font-weight: bold;
+  border-radius: rem(4px);
+}
+
+.textBadge {
+  padding: rem(4px);
+  background: $gray-100;
+  color: $content;
+  font-size: rem(14px);
+  font-weight: bold;
+  border-radius: rem(4px);
+}
+
+
+
+.movePage {
+  @include flexbox($direction: column, $items: center);
+
+  &__wrap {
+    @include flexbox($items: center);
+    padding: rem(48px) 0 0 0;
+  }
+
+  &__list {
+    position: relative;
+    width: rem(34px);
+    height: rem(34px);
+    border: 1px solid $gray-100;
+
+    &:hover {
+      background: $gray-100;
+    }
+  }
+
+  &__link {
+    display: block;
+    width: 100%;
+    height: 100%;
+  }
+}

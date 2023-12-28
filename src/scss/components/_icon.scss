@@ -1,0 +1,104 @@
+@use "../utils" as *;
+// 아이콘 이미지
+
+.searchIcon {
+  
+  background: url("../../images/Icon/Search.png") no-repeat;
+
+  @include imgBtn($w:40,$h:35);
+  border: 0;
+  
+}
+
+
+.heartIcon {
+
+  @include imgBtn($w:32,$h:31);
+  
+  background: url("../../images/Icon/Heart.png") no-repeat;
+  
+}
+
+.locationIcon {
+  
+  background: url("../../images/Icon/Location.png") no-repeat;
+  
+  @include imgBtn($w:32,$h:31);
+  
+}
+
+.blackCart__Icon {
+  
+  background: url("../../images/Icon/Cart-black.png") no-repeat;
+  
+  @include imgBtn($w:32,$h:31);
+  
+}
+
+
+.blog {
+  
+  background: url("../../images/Icon/Blog.svg") no-repeat;
+  
+  @include imgBtn($w:30,$h:30);
+  
+}
+
+.facebook {
+  
+  background: url("../../images/Icon/FaceBook.svg") no-repeat;
+  @include imgBtn($w:30,$h:30);
+  
+  
+}
+
+.instagram {
+  
+  background: url("../../images/Icon/Instagram.svg") no-repeat;
+  @include imgBtn($w:30,$h:30);
+  
+  
+}
+
+.naverPost {
+  
+  background: url("../../images/Icon/NaverPost.svg") no-repeat;
+  @include imgBtn($w:30,$h:30);
+  
+  
+}
+
+.youtube {
+  
+  background: url("../../images/Icon/Youtube.svg") no-repeat;
+  @include imgBtn($w:30,$h:30);
+  
+  
+}
+
+.cartIcon {
+  
+  
+  background: url("../../images/Icon/Cart_white.svg") no-repeat;
+  @include imgBtn($w:45,$h:45);
+  
+  position: absolute;
+  top: rem(258px);
+  left: rem(189px);
+}
+
+.arrowTop {
+  
+  background: url("../../images/Icon/Arrow_top.svg") no-repeat;
+  
+  @include imgBtn($w:18,$h:18);
+  flex-shrink: 0;
+
+}
+
+.arrowBottom {
+  
+  background: url("../../images/Icon/Arrow_bottom.svg") no-repeat;
+  @include imgBtn($w:18,$h:18);
+  flex-shrink: 0;
+}

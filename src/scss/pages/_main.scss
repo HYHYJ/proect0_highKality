@@ -1,0 +1,242 @@
+@use "../utils" as *;
+@use "../components" as *;
+
+
+/* Accessibility Styles */
+.a11yHidden {
+  @include a11yHidden;
+}
+/* 전체 magin없애기, width 100% */
+.main__main {
+  margin: 0;
+  width: 100%;
+  font-family: Pretendard;
+  position: relative;
+  
+  // 메인 배너 
+  & .mainBanner {
+    position: relative;
+    padding: 0;
+  }
+}
+.mainBanner{
+  //메인 배너 이미지
+  &__image {
+    width: 100%;
+  }
+  // 메인 배너 페이지 수 표시 박스
+  &__page {
+    @include posRightTop($r: 22%, $t: 87%);
+    background: rgba(0, 0, 0, 15%);
+    width: rem(47px);
+    height: rem(18px);
+    font-size: rem(13px);
+    font-weight: 600;
+    color:$white;
+    border-radius: rem(12px);
+    padding: auto;
+    text-align: center;
+  }
+  // 메인 배너 옆으로 가기 버튼
+  &__button {
+    cursor: pointer;
+    @include pos;
+    top: 38%;
+    width: rem(52px);
+    height: rem(52px);
+    border-radius: 50%;
+    border: 0;
+    background: rgba(0, 0, 0, 10%) url("/images/Icon/Arrow.png");
+  }
+  &__rightArrow {
+    transform: scaleX(-1);
+    right: 17%;
+  }
+  &__leftArrow {
+    left: 17%;
+  }
+
+}
+
+// 오늘 추천 상품 섹션 
+.recommendProduct {
+  position: relative;
+  width: rem(1050px);
+  // height: 650px; 
+  @include autoMargin;
+  padding: rem(70px) 0;
+  box-sizing: border-box;
+  // 이 상품 어때요?, 놓치면 후회할 가격 부분 
+  &__title {
+    font-size: rem(27px);
+    font-weight: 700;
+    padding: rem(15px) 0;
+    text-align: center;
+    margin-bottom: rem(30px);
+  }
+  // 상품 리스트 부분 
+  &__list {
+    list-style: none;
+    padding-left: 0;
+    @include flexbox($justify: space-between);
+  }
+  //상품 각 박스 부분
+  &__product {
+    position: relative;
+    width: rem(249px);
+    height: rem(426px);
+  }
+  // 상품 이름 
+  &__name {
+    text-decoration: none;
+    color:$black;
+    font-size: rem(14px);
+    padding: rem(18px) 0;
+    display: block;
+  }
+  // 상품 가격 
+  &__price {
+    font-size: rem(22px);
+    font-weight: bold;
+  }
+  // 상품 세일 글자 
+  &__sale {
+    color: orangered;
+    font-size: rem(22px);
+    font-weight: 800;
+  }
+  // 네번째 상품에 중간선 있는 이전 가격 
+  &__beforePrice {
+    display: block;
+    text-decoration: line-through;
+    color:$gray-300;
+    font-size: rem(13px);
+    margin-top: rem(16px);
+  }
+  // 상품사진 하단오른쪽에 있는 장바구니 버튼 
+  &__cart {
+    cursor: pointer;
+    @include pos;
+    bottom: 30%;
+    right: 8%;
+    background: #2a0038 url("/images/Icon/Cart.png");
+    background-position: center;
+    opacity: 50%;
+    width: rem(42px);
+    height: rem(42px);
+    border-radius: 50%;
+    border: 0;
+  }
+  
+  // 추천 상품 더보기 버튼 
+  &__rightArrow {
+    cursor: pointer;
+    background:$white url("/images/Icon/rightArrow_black.png") no-repeat;
+    width: rem(50px);
+    height: rem(50px);
+    border-radius: 50%;
+    border: none;
+    background-position: center;
+    box-shadow: 0 0 rem(10px) $gray-100;
+    position: absolute;
+    top: 45%;
+    right: -2.4%;
+  }
+}
+
+// 서브 라인배너 
+.lineBanner {
+  width: rem(1050px);
+  margin: rem(40px) auto;
+  padding: 0;
+}
+
+// 최근 본 상품 
+.recentProduct {
+  position: relative;
+  position: fixed;
+  top: 50%;
+  right: 2%;
+  width: rem(74px);
+  height: rem(223px);
+  font-size: rem(7px);
+  text-align: center;
+  padding: rem(35px) 0;
+  border: 1px solid $gray-200;
+  box-sizing: border-box;
+  background: $white;
+  // 최근 본 상품 이미지 공통 넓이 
+  & img {
+    width: 100%;
+  }
+  // 최근 본 상품 이미지 리스트 박스 
+  &__list {
+    list-style: none;
+    padding: 0;
+    width: rem(40px);
+    height: rem(129px);
+    overflow: hidden;
+    row-gap: rem(2px);
+    @include autoMargin;
+    margin-top: rem(10px);
+  }
+  // 최근 본 상품 버튼
+  &__sprite {
+    cursor: pointer;
+    width: rem(18px);
+    height: rem(18px);
+    background: url("/images/Icon/Arrow-2.png");
+    position: absolute;
+    border: none;
+  }
+  // 최근 본 상품 위로가기 버튼
+  &__buttonUp {
+    background-position: 50% 10%;
+  
+    top: 4%;
+    right: 37%;
+  }
+  // 최근 본 상품 위로가기 버튼
+  &__buttonDown {
+    background-position: 50% 35%;
+    bottom: 4%;
+    right: 37%;
+  }
+}
+
+
+// 메인 뷰티컬리 광고 팝업창 
+.mainPopup {
+  width: rem(345px);
+  height: rem(530px);
+  border-radius: rem(16px);
+  background: $white;
+  box-shadow: 0 rem(8px) rem(36px) 0 $gray-200;
+  color: $content;
+  font-weight: 700;
+  position: fixed;
+  bottom: rem(10px);
+  left: rem(7px);
+  
+  & img {
+    border-radius: rem(16px) rem(16px) 0 0;
+  }
+  & &__closeButton{
+    border-left: solid rem(1px) $gray-100;
+  }
+  // 뷰티컬리 팝업 누르면 사라짐
+  &:active {
+    visibility: hidden;
+  }
+}
+
+// 뷰티컬리 팝업 닫기 버튼 
+button[class*="mainPopup__close"] {
+  cursor: pointer;
+  height: rem(60px);
+  background: transparent;
+  width: 49%;
+  display: inline-block;
+  margin: 0;
+  border: 0;
+}

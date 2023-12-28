@@ -1,0 +1,276 @@
+@use "../utils" as *;
+@use "../components" as *;
+
+
+.main__Cart {
+  @include flexbox($direction:column,$items:center);
+  @include paddingY(80px);
+  font-family: pretendard;
+  gap: rem(44px);
+}
+
+.cart__section {
+  @include flexbox($direction:column,$items:center);
+  color: $black;
+  font-size: rem(21.328px);
+  font-weight: 600;
+  line-height: 150%;
+}
+
+.cart__king {
+  @include flexbox($justify:space-between,$items:flex-start);
+  width: rem(1050px);
+  
+}
+
+.content {
+  flex: 1;
+}
+
+.cart__button {
+  @include flexbox($items:center);
+  @include paddingY(16px);
+  gap: rem(8px);
+  border-bottom: rem(1px) solid $black;
+  transition: none;
+}
+
+
+.cart__button__click {
+  @include flexbox;
+  background: none;
+  border: none;
+  color: $con-black;
+  font-size: rem(16px);
+  font-weight: 600;
+  line-height: 150%;
+  
+}
+
+.cart__button__img{
+  display: block;
+  background: url("./../../images/Icon/Check_p.svg") no-repeat;
+  width: rem(24px);
+  height: rem(24px);
+  margin-right: rem(8px);
+  transform: translateX(-4px);
+
+}
+
+
+.cart__list {
+  @include flexbox($direction:column,$items:flex-start);
+  
+}
+
+.cart__item {
+  @include flexbox($items:center,$justify:space-between);
+  @include paddingY(16px);
+  
+  width: rem(742px);
+  
+  border-bottom: rem(1px) solid $black;
+  color: $black;
+  font-size: rem(16px);
+  
+  font-weight: 600;
+  line-height: 150%;
+  padding-left: rem(42px);
+}
+
+.cart__item0{
+  background: url(./../../images/Icon/Food_0.svg) no-repeat;
+  background-position: 0% 50%;
+  
+}
+
+.cart__item1{
+  background: url(./../../images/Icon/Food_1.svg) no-repeat;
+  background-position: 0% 50%;
+}
+
+.cart__item2{
+  background: url(./../../images/Icon/Food_2.svg) no-repeat;
+  background-position: 0% 50%;
+}
+.left-box {
+  @include flexbox;
+  
+}
+
+.right-box {
+  @include flexbox($direction:column,$items:flex-start);
+  
+  width: rem(284px);
+  
+  gap: rem(16px);
+  flex-shrink: 0;
+}
+
+// 배송지
+.delivery-section {
+  @include flexbox($direction:column,$items:flex-start);
+  @include padding(20px);
+  
+  gap: rem(12px);
+  align-self: stretch;
+}
+
+.delivery-address {
+  color: $black;
+  font-size: rem(16px);
+  
+  font-weight: 600;
+  line-height: 150%;
+}
+
+.delivery-content {
+  color: $black;
+  font-size: rem(16px);
+  
+  font-weight: 600;
+  line-height: 150%;
+}
+
+.delivery-item {
+  color: $purple;
+  font-size: rem(12.003px);
+  
+  font-weight: 600;
+  line-height: 150%;
+}
+
+
+.delivery-button {
+  @include flexbox($direction:column,$items:center,$justify:center);
+  
+  height: rem(44px);
+  
+  align-self: stretch;
+  border-radius: rem(4px);
+  border: rem(1px) solid $primary;
+  background: $white;
+}
+
+.delivery__button__change {
+  color: $primary;
+  font: rem(16px) bold;
+  
+  font-weight: 600;
+  line-height: 150%;
+}
+
+.price-section {
+  @include flexbox($direction:column,$items:flex-start,$justify:center);
+  @include padding(20px);
+  
+  align-self: stretch;
+  border: rem(1px) solid $gray-100;
+  background: $gray-50;
+}
+
+.price__box {
+  @include flexbox($direction:column,$items:flex-start,$justify:center);
+ 
+  width: rem(244px);
+  padding-bottom: rem(24px);
+  
+  gap: rem(16px);
+  border-bottom: rem(1px) solid $gray-100;
+}
+
+.price__row {
+  @include flexbox($items:center,$justify:space-between);
+  
+  align-self: stretch;
+  color: $con-black;
+  font-size: rem(16px);
+  font-family: Pretendard;
+  line-height: 160%;
+}
+
+.price__rowtotal {
+  @include flexbox($direction:column,$items:flex-end);
+  
+  width: rem(244px);
+  padding-top: rem(24px);
+  
+  gap: rem(11px);
+
+  .price__final {
+    @include flexbox($items:center,$justify:space-between);
+    
+    align-self: stretch;
+    color: $con-black;
+    font-size: rem(16px);
+    
+    line-height: 160%;
+  }
+
+  .price__strong {
+    color: $black;
+    font-size: rem(28.43px);
+    
+    font-weight: 700;
+    line-height: 140%;
+  }
+
+}
+
+.price__save {
+  @include flexbox($items:flex-start,$justify:space-between);
+  @include paddingX(8px);
+  
+  border-radius: 1px;
+  background: $orange;
+  color: $white;
+  
+  font-size: rem(12.003px);
+  
+  font-weight: 600;
+  line-height: 150%;
+  margin-right: rem(16px);
+}
+
+.price__saveinfo {
+  color: $con-black;
+  font-size: rem(12.003px);
+  font-family: Pretendard;
+  font-weight: 600;
+  line-height: 150%;
+}
+
+
+.price__sa {
+  @include flexbox($justify:space-between);
+  
+}
+
+
+
+.order__button {
+  @include flexbox($items:center,$justify:center);
+  width: 284px;
+  
+  height: rem(44px);
+  
+  align-self: stretch;
+  border-radius: rem(4px);
+  background: $purple;
+  color: $white;
+  font-size: rem(16px);
+  
+  font-weight: 600;
+  line-height: 150%;
+}
+
+.details {
+  @include flexbox($justify:center,$direction:column);
+  
+  align-self: stretch;
+  color: $gray-400;
+  font-size: rem(rem(12.003px));
+  
+  font-weight: 600;
+  line-height: 150%;
+}

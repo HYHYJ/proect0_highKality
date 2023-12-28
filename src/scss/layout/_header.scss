@@ -1,1 +1,225 @@
 // header.scss
+@use "../utils" as *;
+@use "../components" as *;
+
+
+header {
+
+  // width: 1920px;
+  @include flexbox($direction: column, $justify: center);
+  color: $content;
+  box-shadow: 0px 0px 24px 0px rgba(0, 0, 0, 0.10);
+  font-family: Pretendard;
+  // width: 1920px;
+
+}
+
+.divider {
+  color: $gray-100;
+  font-size: 12px;
+}
+
+.bold {
+  font-weight: bold
+}
+
+.headerContainer {
+  @include flexbox($direction: column);
+  @include paddingPct(20);
+  position: relative;
+}
+
+.searchContainer {
+  @include flexbox($items: center, $justify: space-between);
+  padding-top: 40px;
+  padding-bottom: 10px;
+  // flex-grow: 1;
+}
+
+//로고 영역
+
+.logoContainer {
+  @include flexbox($items: center);
+  gap: 12px;
+
+
+}
+
+.switchContainer {
+  @include flexbox($items: center);
+  font-weight: bold;
+  font-size: 18px;
+  gap: 12px;
+  position: relative;
+}
+
+.market__link {
+  color: $primary;
+}
+
+
+.beauty__link {
+  color: $gray-400;
+
+  &::after {
+    content: "";
+    display: block;
+    background: url("../../images/Icon/new.svg");
+    width: 7px;
+    height: 7px;
+    top: -5px;
+    right: -15px;
+    // margin-left: 6px;
+    // transform: translateY(-20px);
+    position: absolute;
+  }
+}
+
+//검색 폼 영역
+
+.formContainer {
+ 
+  margin-right: 120px;
+  // padding: 10px;
+}
+
+.searchForm {
+  
+  width: 400px;
+  border: 1.5px solid $primary;
+  border-radius: 3px;
+  padding: 10px 10px 10px 15px;
+  @include flexbox($justify:space-between,$items:center);
+  
+  font-size: 18px; 
+
+  label {
+    @include a11yHidden;
+  }
+
+  &__input {
+    width: 320px;
+    border: 0;
+    @include paddingY(10px);
+  
+  }
+}
+
+.memberIcon {
+  @include flexbox;
+  gap: 30px;
+
+}
+
+
+// 네이게이션 영역
+.nav {
+  @include flexbox($justify: space-between, $items: center);
+  @include paddingY(20px);
+
+  &__list {
+
+    font-weight: 600;
+    width: 700px;
+    @include flexbox($justify: space-around);
+
+  }
+}
+
+.nav__button {
+  border: 0;
+  background: $white;
+  font-weight: bold;
+  transform: translateY(1px);
+
+  &::before {
+    content: "";
+    display: inline-block;
+    background: url("../../images/Icon/Hamburger_black.png") no-repeat;
+
+    width: 16px;
+    height: 14px;
+
+    margin-right: 10px;
+  }
+}
+
+.nav__link {
+  display: block;
+  font-size: 12px;
+  color: $gray-300;
+  border: 1px solid $gray-300;
+  padding: 6px 8px;
+  border-radius: 20px;
+  // transform: translateY(-5px);
+}
+
+.link__color {
+  color: $primary;
+}
+
+// 헤더 배너 영역
+.headerBanner {
+  @include flexbox($justify: flex-end, $items: center);
+
+
+  @include paddingPct(20);
+  @include paddingY(8px);
+
+  background: $primary;
+  color: $white;
+  // position: fixed;
+
+  // text-align: center;
+
+  // @include flexbox;
+  order: -1;
+
+  &__link {
+
+    display: block;
+    font-size: rem(14px);
+
+    // @include paddingX(100%);
+    // padding: 0;
+    text-align: center;
+
+    // display: inline-block;
+    flex-grow: 1;
+  }
+}
+
+//멤버 서비스 (회원가입 영역)
+.memberOnly {
+
+  @include flexbox($justify: space-evenly, $items: center);
+  position: absolute;
+  // top: 50px;
+
+
+  top: 5%;
+  right: 20%;
+
+  &__list {
+    font-weight: 600;
+    font-size: 12px;
+  }
+
+}
+
+.member__signUp {
+  color: $primary;
+}
+
+.member__cusCenter {
+  &::after {
+    content: "";
+    display: inline-block;
+
+    background: url("../../images/Icon/down.svg");
+    width: 8px;
+    height: 6px;
+    transform: translateY(-3px);
+    margin-left: 5px;
+  }
+}
